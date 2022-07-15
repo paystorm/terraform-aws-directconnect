@@ -40,6 +40,26 @@ resource "aws_dx_hosted_private_virtual_interface" "private_vif" {
   mtu              = var.mtu_size
 }
 
+resource "aws_dx_transit_virtual_interface" "this" {
+  count = var.create_dx_transit_vif ? 1 : 0
+
+  name          = var.dx_transit_vif_name
+  connection_id = var.dx_connection_id
+
+  address_family   = var.dx_transit_vif_address_family
+  bgp_asn          = var.dx_transit_vif_bgp_asn
+
+  vlan             = var.dx_transit_vif_vlan_id
+  amazon_address   = var.dx_transit_vif_amazon_address
+  customer_address = var.dx_transit_vif_customer_address
+  mtu              = var.mtu_size
+  bgp_auth_key     = var.bgp_auth_key
+
+  dx_gateway_id = concat(aws_dx_gateway.this.*.id, data.aws_dx_gateway.this.*.id)[0]
+
+  tags = var.dx_transit_vif_tags
+}
+
 resource "aws_dx_private_virtual_interface" "this" {
   count = var.create_dx_private_vif ? 1 : 0
 
@@ -88,3 +108,4 @@ resource "aws_vpn_gateway" "this" {
   vpc_id = var.vpc_id
   tags   = var.vgw_tags
 }
+
