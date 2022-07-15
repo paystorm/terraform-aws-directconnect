@@ -55,7 +55,7 @@ resource "aws_dx_transit_virtual_interface" "this" {
   mtu              = var.mtu_size
   bgp_auth_key     = var.bgp_auth_key
 
-  dx_gateway_id = concat(aws_dx_gateway.this.*.id, data.aws_dx_gateway.this.*.id)[0]
+  dx_gateway_id = var.dx_gateway_id
 
   tags = var.dx_transit_vif_tags
 }
