@@ -195,6 +195,11 @@ variable "mtu_size" {
   default     = "1500"
 }
 
+variable "bgp_auth_key" {
+  description = " The authentication key for BGP configuration."
+  default     = ""
+}
+
 variable "dx_gateway_name" {
   description = "DX Gateway name"
   default     = ""

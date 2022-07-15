@@ -48,10 +48,12 @@ resource "aws_dx_private_virtual_interface" "this" {
 
   address_family   = var.dx_private_vif_address_family
   bgp_asn          = var.dx_private_vif_bgp_asn
+
   vlan             = var.dx_private_vif_vlan_id
   amazon_address   = var.dx_private_vif_amazon_address
   customer_address = var.dx_private_vif_customer_address
   mtu              = var.mtu_size
+  bgp_auth_key     = var.bgp_auth_key
 
   dx_gateway_id = concat(aws_dx_gateway.this.*.id, data.aws_dx_gateway.this.*.id)[0]
 
