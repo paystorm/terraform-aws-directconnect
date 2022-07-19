@@ -255,11 +255,6 @@ variable "dx_transit_vif_address_family" {
   default     = "ipv4"
 }
 
-variable "dx_aws_device" {
-  description = "The Direct Connect endpoint on which the physical connection terminates"
-  default     = ""
-}
-
 variable "dx_provider_name" {
   description = "The name of the service provider associated with the connection"
   default     = ""

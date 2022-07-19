@@ -4,9 +4,7 @@ resource "aws_dx_connection" "this" {
   name            = var.dx_connection_name
   bandwidth       = var.dx_connection_bandwith
   location        = var.dx_connection_location
-  aws_device      = var.dx_aws_device
   provider_name   = var.dx_provider_name
-  id              = var.dx_connection_id
 
   tags = var.dx_connection_tags
 }
