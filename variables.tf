@@ -264,8 +264,3 @@ variable "dx_provider_name" {
   description = "The name of the service provider associated with the connection"
   default     = ""
 }
-
-variable "dx_id" {
-  description = "The ID of the connection"
-  default     = ""
-}

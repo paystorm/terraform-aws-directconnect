@@ -6,7 +6,7 @@ resource "aws_dx_connection" "this" {
   location        = var.dx_connection_location
   dx_aws_device   = var.dx_aws_device
   provider_name   = var.dx_provider_name
-  id              = var.dx_id
+  id              = var.dx_connection_id
 
   tags = var.dx_connection_tags
 }
