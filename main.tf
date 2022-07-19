@@ -1,9 +1,12 @@
 resource "aws_dx_connection" "this" {
   count = var.create_dx_connection ? 1 : 0
 
-  name      = var.dx_connection_name
-  bandwidth = var.dx_connection_bandwith
-  location  = var.dx_connection_location
+  name            = var.dx_connection_name
+  bandwidth       = var.dx_connection_bandwith
+  location        = var.dx_connection_location
+  dx_aws_device   = var.dx_aws_device
+  provider_name   = var.dx_provider_name
+  id              = var.dx_id
 
   tags = var.dx_connection_tags
 }

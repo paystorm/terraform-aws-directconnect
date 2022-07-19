@@ -254,3 +254,18 @@ variable "dx_transit_vif_address_family" {
   description = "The Address Family for the BGP Peer ipv4 or ipv6"
   default     = "ipv4"
 }
+
+variable "dx_aws_device" {
+  description = "The Direct Connect endpoint on which the physical connection terminates"
+  default     = ""
+}
+
+variable "dx_provider_name" {
+  description = "The name of the service provider associated with the connection"
+  default     = ""
+}
+
+variable "dx_id" {
+  description = "The ID of the connection"
+  default     = ""
+}
