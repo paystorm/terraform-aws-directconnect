@@ -92,7 +92,7 @@ resource "aws_dx_gateway_association" "this" {
   count = var.create_dx_gateway && var.associate_dx_gateway ? 1 : 0
 
   dx_gateway_id         = aws_dx_gateway.this[0].id
-  associated_gateway_id = concat(aws_vpn_gateway.this.*.id[0], [var.vgw_id])[0]
+  associated_gateway_id = concat(aws_vpn_gateway.this.*.id, [var.vgw_id])[0]
 }
 
 resource "aws_dx_gateway_association_proposal" "this" {
